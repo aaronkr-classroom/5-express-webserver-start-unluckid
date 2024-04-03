@@ -1,7 +1,7 @@
 // listing 9.3.js (p. 145)
 "use strict";
 
-const port = 3000,
+const port = 3002,
   express = require("express"),
   app = express();
 
@@ -44,6 +44,9 @@ app.get("/", (req, res) => {
 
 app.get("/contact", (req, res) => {
   res.send("This is the CONTACT page.");
+});
+app.get("/about", (req, res) => {
+  res.send("This is the about page.");
 });
 
 /**
