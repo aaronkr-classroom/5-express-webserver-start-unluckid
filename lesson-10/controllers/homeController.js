@@ -9,8 +9,8 @@
 
 
 exports.respondWithName = (req, res) => {
-    const { name } = req.params; 
-    res.render('index', { name }); // customView라는 EJS 뷰를 렌더링하고 이름을 전달
+    let paramnName  = req.params.name; 
+    res.render('index', { name:paramName }); // customView라는 EJS 뷰를 렌더링하고 이름을 전달
   };
 
 /**

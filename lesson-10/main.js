@@ -1,13 +1,15 @@
 // main.js
 "use strict";
-const port = 3006,
+const port = 3007,
 express = require("express"),
+layout = require('express-ejs-layouts'),
 homeController = require('/workspaces/5-express-webserver-start-unluckid/lesson-10/controllers/homeController.js'),
 app = express();
 
 app.set('view engine', 'ejs');
-app.set('views', __dirname + '/views');
+app.set('views', name + '/views');
 
+app.use(layout);
 
 app.get('/', (req, res) => {
     const data = {
@@ -21,7 +23,7 @@ app.get('/', (req, res) => {
 app.get("/users/:name", homeController.respondWithName);
 app.get("/user2/:name", homeController.respondWithName2);
 
-const PORT = 3006;
+const PORT = 3007;
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
   });
